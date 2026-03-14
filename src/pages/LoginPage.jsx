@@ -1,8 +1,55 @@
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
+
 function LoginPage() {
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const success = login(username, password);
+
+    if (success) {
+      navigate("/list");
+    } else {
+      alert("Invalid credentials");
+    }
+  };
+
   return (
     <div>
-      <h1>Login Page</h1>
-      <p>Employee Insights Dashboard</p>
+      <h1>Employee Dashboard Login</h1>
+
+      <form onSubmit={handleSubmit}>
+
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+
+        <br />
+
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <br />
+
+        <button type="submit">Login</button>
+
+      </form>
+
     </div>
   );
 }
