@@ -5,7 +5,6 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-    // Check session on page reload
     useEffect(() => {
         const storedAuth = localStorage.getItem("isAuthenticated");
         if (storedAuth === "true") {
