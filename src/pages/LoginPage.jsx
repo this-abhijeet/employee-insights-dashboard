@@ -53,6 +53,29 @@ function LoginPage() {
 
     </div>
   );
+  return(
+
+    <div className="container">
+
+    <div className="card">
+
+    <h1>Employee Dashboard Login</h1>
+
+    <input type="text" placeholder="Username"/>
+
+    <br/>
+
+    <input type="password" placeholder="Password"/>
+
+    <br/>
+
+    <button>Login</button>
+
+    </div>
+
+    </div>
+
+  )
 }
 
 export default LoginPage;
