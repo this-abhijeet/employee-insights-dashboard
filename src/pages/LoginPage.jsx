@@ -16,7 +16,8 @@ function LoginPage() {
     const success = login(username, password);
 
     if (success) {
-      navigate("/list");
+      // navigate("/list");
+      navigate("/employees");
     } else {
       alert("Invalid credentials");
     }
