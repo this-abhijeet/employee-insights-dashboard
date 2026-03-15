@@ -55,6 +55,16 @@ const EmployeeDashboard = () => {
 
       <h1>Employee List</h1>
 
+      <button
+        onClick={() => navigate("/analytics", { state: employees })}
+        style={{
+          marginBottom: "20px",
+          padding: "10px"
+        }}
+      >
+        View Analytics
+      </button>
+
       <input
         type="text"
         placeholder="Search employees..."
